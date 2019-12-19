@@ -8,6 +8,7 @@ class JinjiangApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("=======");
     }
 
 }

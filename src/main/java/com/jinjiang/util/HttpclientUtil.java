@@ -129,6 +129,9 @@ public class HttpclientUtil {
 			HttpPost httpPost = new HttpPost(url);
 			StringEntity se = new StringEntity(json);
 			httpPost.setHeader("Content-Type", "application/json;charset=UTF-8");
+			httpPost.setHeader("X-APPID","1289");
+			httpPost.setHeader("X-TOKEN","1D9A9D7CF027C7AEA767161990D2E328");
+			httpPost.setHeader("X-CALLER-TIME","1576670921");
 			httpPost.setEntity(se);
 			HttpResponse response = client.execute(httpPost);
 			HttpEntity entity = response.getEntity();
