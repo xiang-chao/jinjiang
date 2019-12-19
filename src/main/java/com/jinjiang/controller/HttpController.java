@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @description:
+ * @description: 调用锦江接口那礼包（金卡）
  * @author: xiangchao
  * @date: 2019/12/19 5:53 下午
  */
