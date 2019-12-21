@@ -1,8 +1,11 @@
 package com.jinjiang.controller;
 
+import com.jinjiang.service.JinjiangService;
 import com.jinjiang.util.HttpclientUtil;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 /**
  * @description: 调用锦江接口拿礼包（金卡）
@@ -12,11 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HttpController {
 
-    @RequestMapping("postJsonParams")
-    public String postJsonParams(String orderCode){
+    @Autowired
+    private JinjiangService jinjiangService;
+
+    @PostMapping("postJsonParams")
+    public HashMap<String, Object> postJsonParams(@RequestBody String orderCode){
         try {
-            return HttpclientUtil.postJsonParams("http://partnermeb.bestwehotel.com/member-open/rest/oauth/partnerExchange","{\"partnerCode\":\"YOUWAN\",\"phoneNumber\":\"13688855888\",\"orderCode\":\""+orderCode+"\",\"exchPoint\":\"\",\n" +
-                    "\"idcard\":\"150269199905054598\",\"giftCode\":1,\"rulePlan\":\"\"}");
+            return jinjiangService.saveJinJiangfun(orderCode);
         }catch (Exception e) {
             e.printStackTrace();
             return null;
