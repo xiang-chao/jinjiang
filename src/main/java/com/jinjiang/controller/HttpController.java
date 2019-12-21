@@ -1,9 +1,11 @@
 package com.jinjiang.controller;
 
+import com.jinjiang.pojo.Jinjiang;
 import com.jinjiang.service.JinjiangService;
-import com.jinjiang.util.HttpclientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 
@@ -19,9 +21,9 @@ public class HttpController {
     private JinjiangService jinjiangService;
 
     @PostMapping("postJsonParams")
-    public HashMap<String, Object> postJsonParams(@RequestBody String orderCode){
+    public HashMap<String, Object> postJsonParams(@RequestBody Jinjiang jinjiang){
         try {
-            return jinjiangService.saveJinJiangfun(orderCode);
+            return jinjiangService.saveJinJiangfun(jinjiang.getOrderCode());
         }catch (Exception e) {
             e.printStackTrace();
             return null;

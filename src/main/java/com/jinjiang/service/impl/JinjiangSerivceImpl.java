@@ -1,8 +1,8 @@
 package com.jinjiang.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.jinjiang.pojo.Jinjiang;
 import com.jinjiang.mapper.JinjiangMapper;
+import com.jinjiang.pojo.Jinjiang;
 import com.jinjiang.service.JinjiangService;
 import com.jinjiang.util.HttpclientUtil;
 import com.jinjiang.util.ServerResponseUtil;
